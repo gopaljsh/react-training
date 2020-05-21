@@ -6,7 +6,8 @@ import CarouselSlider from './component/carousel';
 import Test from './component/test';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import TableComp from './component/table';
-import FormComp from './component/form';
+import ControlFormComp from './component/form';
+import UncontrolFormComp from './component/uncontrolled-form';
 
 
 
@@ -48,11 +49,12 @@ export default class App extends Component {
       <div className="App">
         {/* <Test topictitle="Home" topics='topic 4'/> */}
         <Router>
-          <NavbarMenu title="Navbar" menu={['Mobile', 'Car', 'Form']} />
-          <CarouselSlider />
+          <NavbarMenu title="Navbar" menu={['Mobile', 'Car', 'Form', 'UnconrollComp']} />
+          {/* <CarouselSlider /> */}
           <Route path="/" exact render={(props) => <TableComp {...props} arr={this.state.arr}></TableComp>}></Route>
           <Route path="/Car" exact component={Test}></Route>
-          <Route path="/Form" exact component={FormComp}></Route>
+          <Route path="/Form" exact component={ControlFormComp}></Route>
+          <Route path="/UnconrollComp" exact component={UncontrolFormComp}></Route>
         </Router>
         {/* <TableComp arr={this.state.arr} /> */}
       </div>
