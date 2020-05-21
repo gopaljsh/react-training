@@ -61,7 +61,6 @@ export default class UncontrolFormComp extends Component {
         this.setState({
             sliderStyle
         });
-
        const postData = {
             'email': this.form.email.value,
             'password': this.form.password.value,
@@ -99,7 +98,7 @@ export default class UncontrolFormComp extends Component {
                                     type="radio"
                                     label='Male'
                                     name="gender"
-                                    value="male"
+                                    value='male'
                                     checked={gender === "male"}
                                     inline
                                     onChange={this.changeHandler}
