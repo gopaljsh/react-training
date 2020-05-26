@@ -40,14 +40,14 @@ export default class TableComp extends Component {
                                 </tr>
                             </thead>
                             <tbody>
-                                {this.props.arr.map((mobile, index) => (
+                                {/* {this.props.arr.map((mobile, index) => (
                                     <tr key={index}>
                                         <td>{mobile.id}</td>
                                         <td>{mobile.company}</td>
                                         <td>{mobile.model}</td>
                                         <td>{mobile.prise}</td>
                                     </tr>
-                                ))}
+                                ))} */}
                             </tbody>
                         </Table>
                     </div>

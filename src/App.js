@@ -4,10 +4,13 @@ import './App.css';
 import NavbarMenu from './component/navbar';
 import CarouselSlider from './component/carousel';
 import Test from './component/test';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import TableComp from './component/table';
 import ControlFormComp from './component/form';
 import UncontrolFormComp from './component/uncontrolled-form';
+import Login from './component/login';
+import {ProtectedRoute} from './component/protected.route';
+import Dashboard from './component/dashboard';
 
 
 
@@ -46,15 +49,19 @@ export default class App extends Component {
   }
   render() {
     return (
-      <div className="App">
+      <div className="App d-flex">
         {/* <Test topictitle="Home" topics='topic 4'/> */}
         <Router>
-          <NavbarMenu title="Navbar" menu={['Mobile', 'Car', 'Form', 'UnconrollComp']} />
-          {/* <CarouselSlider /> */}
-          <Route path="/" exact render={(props) => <TableComp {...props} arr={this.state.arr}></TableComp>}></Route>
-          <Route path="/Car" exact component={Test}></Route>
-          <Route path="/Form" exact component={ControlFormComp}></Route>
-          <Route path="/UnconrollComp" exact component={UncontrolFormComp}></Route>
+          <Switch>
+            {/* <NavbarMenu title="Navbar" menu={['Mobile', 'Car', 'Form', 'UnconrollComp']} /> */}
+            {/* <CarouselSlider /> */}
+            {/* <Route path="/" exact render={(props) => <TableComp {...props} arr={this.state.arr}></TableComp>}></Route>
+            <Route path="/Car" exact component={Test}></Route>
+            <Route path="/Form" exact component={ControlFormComp}></Route>
+            <Route path="/UnconrollComp" exact component={UncontrolFormComp}></Route> */}
+            <Route exact path="/" component={Login} />
+            <ProtectedRoute path="/dashboard" component={Dashboard}></ProtectedRoute>  
+          </Switch> 
         </Router>
         {/* <TableComp arr={this.state.arr} /> */}
       </div>
