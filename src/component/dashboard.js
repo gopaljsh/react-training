@@ -7,11 +7,11 @@ import Test from './test';
 import './dashboard.css';
 
 export default class Dashboard extends Component {
-    
+
     render() {
         return (
             <Router>
-                <SidebarComp parentprops={this.props}/>
+                <SidebarComp {...this.props}/>
                 <div className="dashboard-container">
                     <Switch>
                         <Route path="/dashboard/mobile" component={TableComp} />

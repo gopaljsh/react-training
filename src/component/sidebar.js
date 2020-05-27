@@ -21,7 +21,7 @@ export default class SidebarComp extends Component {
               <div className="d-block">
                   <Button type="submit" onClick={() => {
                       auth.logout(() => {
-                        this.props.parentprops.history.push('/');
+                        this.props.history.push('/');
                       });
                   }}>Sign Out</Button>
               </div>
