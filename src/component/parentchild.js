@@ -1,5 +1,6 @@
 import React, { Component, Children } from 'react';
 import Table from 'react-bootstrap/Table';
+import Addform from './addform';
 
 export default class ParentchildComp extends Component {
     constructor(props) {
@@ -35,13 +36,22 @@ export default class ParentchildComp extends Component {
         }
     }
 
-
+    updatevalue = (valueobj) => {
+        this.setState({
+            arr: [...this.state.arr, valueobj]
+        });
+    }
 
     
     render() {
         return (
             <div className="container">
                 <div className="row mt-5">
+                    <div className="col-sm-12">
+                        <Addform length={this.state.arr.length} addvalue={this.updatevalue} />
+                    </div>
+                </div>
+                <div className="row mt-3">
                     <div className="col-sm-12">
                         <Table striped bordered hover>
                             <thead>
