@@ -8,8 +8,13 @@ class Login extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        localStorage.setItem('email', e.target.email.value);
-        localStorage.setItem('password', e.target.password.value);
+        let email = e.target.email.value;
+        let password = e.target.password.value;
+
+        if(email != '' && password != '') {
+            localStorage.setItem('email', e.target.email.value);
+            localStorage.setItem('password', e.target.password.value);
+        }
         auth.login(() => {
             this.props.history.push('/dashboard/mobile');
         });
