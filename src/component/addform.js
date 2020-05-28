@@ -38,17 +38,17 @@ export default class Addform extends Component {
             <div>
                 <Form ref={ref => this.form = ref}>
                     <Form.Row>
-                        <Col>
+                        <Col sm={3}>
                             <Form.Control type="text" name="company" placeholder="Company" />
                         </Col>
-                        <Col>
+                        <Col sm={3}>
                             <Form.Control type="text" name="model" placeholder="Model" />
                         </Col>
-                        <Col>
+                        <Col sm={5}>
                             <Form.Control type="text" name="price" placeholder="Price" />
                         </Col>
-                        <Col>
-                            <Button type="button" onClick={this.onSubmit}>Add</Button>
+                        <Col sm={1}>
+                            <Button type="button" className="d-block" onClick={this.onSubmit}>Add</Button>
                         </Col>
                     </Form.Row>
                 </Form>

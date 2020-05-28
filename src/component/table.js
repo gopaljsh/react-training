@@ -35,20 +35,16 @@ export default class TableComp extends Component {
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Company</th>
-                                    <th>Model</th>
-                                    <th>Prise</th>
+                                    <th>Title</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {/* {this.props.arr.map((mobile, index) => (
+                                {this.state.jsonData.map((data, index) => (
                                     <tr key={index}>
-                                        <td>{mobile.id}</td>
-                                        <td>{mobile.company}</td>
-                                        <td>{mobile.model}</td>
-                                        <td>{mobile.prise}</td>
+                                        <td>{data.id}</td>
+                                        <td>{data.title}</td>
                                     </tr>
-                                ))} */}
+                                ))}
                             </tbody>
                         </Table>
                     </div>
