@@ -17,6 +17,9 @@ export default class SidebarComp extends Component {
                   <li className="nav-item">
                     <Link to="/dashboard/car" className="nav-link">Car</Link>
                   </li>
+                  <li className="nav-item">
+                    <Link to="/dashboard/parentchild" className="nav-link">Parentchild</Link>
+                  </li>
               </ul>
               <div className="d-block">
                   <Button type="submit" onClick={() => {

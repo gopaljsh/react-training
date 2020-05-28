@@ -1,31 +1,43 @@
 import React, { Component, Children } from 'react';
 import Table from 'react-bootstrap/Table';
 
-export default class TableComp extends Component {
+export default class ParentchildComp extends Component {
     constructor(props) {
         super(props)
     
         this.state = {
-             jsonData: [],
-             value: 'oldValue'
+            arr: [
+                {
+                    id: 1,
+                    company: 'samsung',
+                    model: 's20',
+                    price: '10,000'
+                },
+                {
+                    id: 2,
+                    company: 'redmi',
+                    model: 'k20',
+                    price: '15,000'
+                },
+                {
+                    id: 3,
+                    company: 'realme',
+                    model: 'nazaro',
+                    price: '20,000'
+                },
+                {
+                    id: 4,
+                    company: 'iPhone',
+                    model: 's2',
+                    price: '40,000'
+                },
+            ]
         }
     }
 
-    async componentDidMount() {
-        let response = await this.handleResponse(); 
-        this.setState({
-            jsonData: response
-        });
-    }
 
-    async handleResponse() {
-        return await fetch('https://jsonplaceholder.typicode.com/todos')
-                .then(response => response.json())
-                .then(json => {
-                    return json;
-                });
-    }
 
+    
     render() {
         return (
             <div className="container">
@@ -37,24 +49,21 @@ export default class TableComp extends Component {
                                     <th>#</th>
                                     <th>Company</th>
                                     <th>Model</th>
-                                    <th>Prise</th>
+                                    <th>Price</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {/* {this.props.arr.map((mobile, index) => (
+                                {this.state.arr.map((mobile, index) => (
                                     <tr key={index}>
                                         <td>{mobile.id}</td>
                                         <td>{mobile.company}</td>
                                         <td>{mobile.model}</td>
-                                        <td>{mobile.prise}</td>
+                                        <td>{mobile.price}</td>
                                     </tr>
-                                ))} */}
+                                ))}
                             </tbody>
                         </Table>
                     </div>
-                    {/* <div className="col-sm-12">
-                        {this.state.jsonData.map((data, index) => <h2 key={index}>{data.completed.toString() + ' ' + data.title}</h2>)}
-                    </div> */}
                 </div>
             </div>
         )

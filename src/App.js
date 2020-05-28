@@ -10,6 +10,7 @@ import ControlFormComp from './component/form';
 import UncontrolFormComp from './component/uncontrolled-form';
 import Login from './component/login';
 import {ProtectedRoute} from './component/protected.route';
+import {LoginRoute} from './component/login.route';
 import Dashboard from './component/dashboard';
 
 
@@ -59,8 +60,12 @@ export default class App extends Component {
             <Route path="/Car" exact component={Test}></Route>
             <Route path="/Form" exact component={ControlFormComp}></Route>
             <Route path="/UnconrollComp" exact component={UncontrolFormComp}></Route> */}
-            <Route exact path="/" component={Login} />
-            <ProtectedRoute path="/dashboard" component={Dashboard}></ProtectedRoute>  
+            <LoginRoute exact path="/" > 
+              <Login />
+            </LoginRoute>
+            <ProtectedRoute path="/dashboard">
+              <Dashboard />
+            </ProtectedRoute>  
           </Switch> 
         </Router>
         {/* <TableComp arr={this.state.arr} /> */}

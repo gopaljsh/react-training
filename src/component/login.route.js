@@ -1,22 +1,23 @@
-import React, { Children } from "react";
+import React from "react";
 import {Route, Redirect} from 'react-router-dom';
 
 import auth from './auth';
 
-export const ProtectedRoute = ({children, ...rest}) => {
+export const LoginRoute = ({children, ...rest}) => {
     return (
         <Route {...rest} 
             render={(props) => {
                 //let {test} = {...rest};
                 if(auth.isAuthenticated()) {
-                    return children;
-                } else {
+                    console.log('true');
                     return <Redirect to={
                         {
-                            pathname: '/',
+                            pathname: '/dashboard/mobile',
                             state: props.location
                         }
-                    }></Redirect>
+                    }></Redirect> 
+                } else {
+                    return children
                 }
             }}></Route>
     );

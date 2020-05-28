@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import auth from './auth';
+import { withRouter } from 'react-router-dom';
 
-export default class Login extends Component {
+class Login extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
@@ -40,3 +41,5 @@ export default class Login extends Component {
         )
     }
 }
+
+export default withRouter(Login);

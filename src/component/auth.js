@@ -4,12 +4,7 @@ class Auth {
     }
 
     login(cb) {
-        let email = localStorage.getItem('email');
-        if (email) {
-            this.authenticated = true;
-        } else {
-            this.authenticated = false;
-        }
+        this.isAuthenticated();
         cb();
     }
 
@@ -21,6 +16,12 @@ class Auth {
     }
 
     isAuthenticated() {
+        let email = localStorage.getItem('email');
+        if (email != undefined && email != '') {
+            this.authenticated = true;
+        } else {
+            this.authenticated = false;
+        }
         return this.authenticated;
     }
 }
