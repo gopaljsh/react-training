@@ -19,6 +19,10 @@ export default class Addform extends Component {
 
     onSubmit = () => {
 
+        if(this.form.company.value === '' && this.form.model.value === '' && this.form.price.value === '') {
+            return;
+        }
+
         let valueobj = {
             id: this.props.length + 1,
             company: this.form.company.value,
