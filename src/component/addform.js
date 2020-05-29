@@ -35,6 +35,8 @@ export default class Addform extends Component {
         this.form.company.value = '';
         this.form.model.value = '';
         this.form.price.value = '';
+
+        this.form.company.focus();
     }
 
     render() {
